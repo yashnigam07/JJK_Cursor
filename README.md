@@ -2,7 +2,7 @@
 
 ## **Description**
 
-This project brings a touch of anime magic to your web experience with a custom cursor inspired by the Jujutsu Kaisen (JJK) series. The project features a visually engaging and interactive design, including a dynamic background and a unique custom cursor that reacts to user interactions.
+This project brings a touch of anime magic to your web experience with a custom cursor inspired by the Jujutsu Kaisen (JJK) series. It features a visually engaging and interactive design, including a dynamic background and a unique custom cursor that reacts to user interactions.
 
 ### **Features**
 
@@ -12,7 +12,7 @@ This project brings a touch of anime magic to your web experience with a custom 
 
 - **Interactive Button**: The button text initially reads "Domain Expansion" and changes to "Expanded" upon clicking. The background transition is accompanied by a smooth CSS transition.
 
-- **Particle Effects**: Interactive particle effects that appear when the user clicks anywhere on the page, adding a layer of visual interest and interactivity.
+- **Particle Effects**: Interactive particle effects appear when the user clicks anywhere on the page, adding a layer of visual interest and interactivity.
 
 - **Anime Quotes**: Displays random anime quotes from Jujutsu Kaisen when hovering over the button, adding a personalized touch to the user experience.
 
@@ -28,4 +28,5 @@ To run this project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/repository-name.git
+   git clone https://github.com/yashnigam07/JJK_Cursor.git
+
