@@ -1,0 +1,175 @@
+body {
+    cursor: none;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5_VP5K3ll_oiwidyN-N_UfqArNYP0WywEHw&s') no-repeat center center fixed; /* Initial background image */
+    background-size: cover;
+    position: relative;
+    transition: background 1s ease; /* Smooth transition for background change */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for depth */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+#cursor {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.2s ease;
+    z-index: 1000;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 70%);
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5), 0 0 30px 10px rgba(0, 0, 255, 0.5); /* Glowing effect */
+}
+
+/* Style for the cursor when hovering over clickable elements */
+.hovered {
+    transform: translate(-50%, -50%) scale(2);
+    background: radial-gradient(circle, rgba(231,76,60,1) 0%, rgba(0,0,0,0) 70%);
+    box-shadow: 0 0 25px 10px rgba(231,76,60,0.5), 0 0 50px 20px rgba(52,152,219,0.5);
+}
+
+.content h1 {
+    font-size: 10vw; /* Responsive font size */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+button {
+    font-size: 3vw; /* Responsive font size */
+    padding: 10px 20px; /* Added padding for better touch targets */
+    border: 2px solid black;
+    border-radius: 0.5vw;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Glow effect on hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Improved focus state for accessibility */
+}
+
+button.clicked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(231,76,60,0.6) 0%, rgba(231,76,60,0) 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+button.clicked {
+    color: #fff;
+}
+
+button.clicked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#anime-quote {
+    font-size: 2.5vw; /* Responsive font size */
+    margin-top: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: float 2s infinite ease-in-out, sparkle 1s infinite ease-in-out; /* Added sparkle effect */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 15vw; /* Adjusted font size for smaller screens */
+    }
+
+    button {
+        font-size: 4vw; /* Adjusted button size for smaller screens */
+        padding: 12px 24px;
+    }
+
+    #anime-quote {
+        font-size: 3vw; /* Adjusted font size for smaller screens */
+    }
+
+    /* Hide the custom cursor on mobile devices */
+    #cursor {
+        display: none;
+    }
+
+    /* Ensure the overlay covers the entire screen */
+    .background-overlay {
+        display: block;
+    }
+}
+
